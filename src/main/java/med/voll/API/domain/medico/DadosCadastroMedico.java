@@ -1,23 +1,27 @@
-package med.voll.API.paciente;
+package med.voll.API.domain.medico;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
-import med.voll.API.endereco.Endereco;
+import med.voll.API.domain.endereco.DadosEndereco;
 
-public record DadosCadastroPaciente(
+public record DadosCadastroMedico(
+        Long id,
         @NotBlank
         String nome,
-        @Email
-        String email,
         @NotBlank
+                @Email
+        String email,
+        @NotNull
         String telefone,
         @NotBlank
-        @Pattern(regexp = "\\d{11}")
-        String cpf,
+                @Pattern(regexp = "\\d{4,6}")
+        String crm,
+        @NotNull
+        Especialidade especialidade,
         @NotNull
                 @Valid
-        Endereco endereco) {
+        DadosEndereco endereco) {
 }

@@ -1,7 +1,7 @@
 package med.voll.API.controller;
 
 import jakarta.validation.Valid;
-import med.voll.API.paciente.*;
+import med.voll.API.domain.paciente.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
